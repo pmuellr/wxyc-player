@@ -29,6 +29,10 @@
       -ms-transition:     background-color 10000ms linear;
       transition:         background-color 10000ms linear;
     }
+    audio {
+      padding-top:    1em;
+      padding-bottom: 1em;
+    }
     #wxyc-image {
       float: right;
     }
@@ -36,15 +40,20 @@
   </head>
 
   <body>
-    <img id="wxyc-image" src="images/wxyc.png" width="128"/>
-
     <audio controls>
       <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
       Sorry, your browser does not support playing audio on this web page.
     </audio>
 
-    <p><a href="http://www.wxyc.info/playlists/recent">PlayList</a></p>
-    <p><a href="http://www.wxyc.org">WXYC Main site</a></p>
+    <a href="http://www.wxyc.info/playlists/recent" target="_blank">
+      <img id="wxyc-image" src="images/wxyc.png" width="128"/>
+    </a>
+
+    <p>
+      <a href="http://www.wxyc.info/playlists/recent" target="_blank">
+        playlist
+      </a>
+    </p>
 
     <script>
     var color
