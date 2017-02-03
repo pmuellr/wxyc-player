@@ -19,14 +19,10 @@
       padding:  0;
     }
     body {
-      padding:            1em;
+      padding:            0.5em;
       font-size:          300%;
       font-family:        sans-serif;
       background-color:   #EEEEEE;
-      -webkit-transition: background-color 10000ms linear;
-      -moz-transition:    background-color 10000ms linear;
-      -o-transition:      background-color 10000ms linear;
-      -ms-transition:     background-color 10000ms linear;
       transition:         background-color 10000ms linear;
     }
     audio {
@@ -37,46 +33,48 @@
       text-decoration: none;
     }
     #wxyc-image {
-      float:         right;
       margin-bottom: 1em;
     }
     #github-image {
-      position: fixed;
-      bottom:   0;
-      right:    0;
-      margin:   1em;
     }
-    .float-right {
-      float: right
+    .flex-column {
+      display:        flex;
+      flex-direction: column;
+    }
+    .flex-grow {
+      flex-grow: 1;
     }
     </style>
   </head>
 
-  <body>
-    <a href="http://www.wxyc.org/" target="_blank" class="float-right">
-      <img id="wxyc-image" src="images/wxyc.png" width="128"/>
-    </a>
+  <body class="flex-column">
 
-    <br clear="all">
+      <div>
+        <a href="http://www.wxyc.org/" target="_blank">
+          <img id="wxyc-image" src="images/wxyc.png" width="128"/>
+        </a>
+      </div>
 
-    <audio controls class="float-right">
-      <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
-      Sorry, your browser does not support playing audio on this web page.
-    </audio>
+      <div>
+        <audio controls>
+          <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
+          Sorry, your browser does not support playing audio on this web page.
+        </audio>
+      </div>
 
-    <br clear="all">
+      <div>
+        <a href="http://www.wxyc.info/playlists/recent" target="_blank">
+          playlist
+        </a>
+      </div>
 
-    <a href="https://github.com/pmuellr/wxyc-player" target="_blank" class="float-right">
-      <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
-    </a>
+      <div class="flex-grow">&nbsp;</div>
 
-    <br clear="all">
-
-    <p class="float-right">
-      <a href="http://www.wxyc.info/playlists/recent" target="_blank">
-        playlist
-      </a>
-    </p>
+      <div>
+        <a href="https://github.com/pmuellr/wxyc-player" target="_blank">
+          <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
+        </a>
+      </div>
 
     <script>
     var color
