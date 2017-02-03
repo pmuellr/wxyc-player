@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>WXYC Live Stream</title>
-    <link rel="shortcut icon" href="images/wxyc.png" />
+    <link rel="shortcut icon" href="images/wxyc-square.png" />
     <style>
     * {
       box-sizing: border-box;
@@ -26,14 +26,14 @@
       transition:         background-color 10000ms linear;
     }
     audio {
-      padding-top:    1em;
-      padding-bottom: 1em;
+      padding-top:    0.0em;
+      padding-bottom: 0.0em;
     }
     a {
       text-decoration: none;
     }
     #wxyc-image {
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
     }
     #github-image {
     }
@@ -49,32 +49,30 @@
 
   <body class="flex-column">
 
-      <div>
-        <a href="http://www.wxyc.org/" target="_blank">
-          <img id="wxyc-image" src="images/wxyc.png" width="128"/>
-        </a>
-      </div>
+    <div class="flex-grow">
+      <a href="http://www.wxyc.org/" target="_blank">
+        <img id="wxyc-image" src="images/wxyc-square.png" width="128"/>
+      </a>
+    </div>
 
-      <div>
-        <audio controls>
-          <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
-          Sorry, your browser does not support playing audio on this web page.
-        </audio>
-      </div>
+    <div class="flex-grow">
+      <audio controls>
+        <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
+        Sorry, your browser does not support playing audio on this web page.
+      </audio>
+    </div>
 
-      <div>
-        <a href="http://www.wxyc.info/playlists/recent" target="_blank">
-          playlist
-        </a>
-      </div>
+    <div class="flex-grow">
+      <a href="http://www.wxyc.info/playlists/recent" target="_blank">
+        playlist
+      </a>
+    </div>
 
-      <div class="flex-grow">&nbsp;</div>
-
-      <div>
-        <a href="https://github.com/pmuellr/wxyc-player" target="_blank">
-          <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
-        </a>
-      </div>
+    <div>
+      <a href="https://github.com/pmuellr/wxyc-player" target="_blank">
+        <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
+      </a>
+    </div>
 
     <script>
     var color
