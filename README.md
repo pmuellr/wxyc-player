@@ -3,8 +3,14 @@ wxyc-player - a web server providing a WXYC radio player
 
 WXYC's internet radio player as of Feb 2017 is ... awful.
 My son dared me to build a better one.  This is the source.
-Here's the player: https://pmuellr.github.io/wxyc-player
+The player is available at this web site:
 
+https://pmuellr.github.io/wxyc-player
+
+If you have any problems using the web page above, please
+[create an issue](https://github.com/pmuellr/wxyc-player/issues) (if you
+have a GitHub account), or let me know via Twitter
+[@pmuellr](http://twitter.com/pmuellr).
 
 rando
 ================================================================================
@@ -26,4 +32,6 @@ contributing
 
 Awesome!  We're happy that you want to contribute.
 
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information.
+Make sure that you're read and understand the [Code of Conduct].
+
+[Code of Conduct]: CODE_OF_CONDUCT.md

@@ -20,7 +20,7 @@
     }
     body {
       padding:            1em;
-      font-size:          200%;
+      font-size:          300%;
       font-family:        sans-serif;
       background-color:   #EEEEEE;
       -webkit-transition: background-color 10000ms linear;
@@ -33,23 +33,46 @@
       padding-top:    1em;
       padding-bottom: 1em;
     }
+    a {
+      text-decoration: none;
+    }
     #wxyc-image {
-      float: right;
+      float:         right;
+      margin-bottom: 1em;
+    }
+    #github-image {
+      position: fixed;
+      bottom:   0;
+      right:    0;
+      margin:   1em;
+    }
+    .float-right {
+      float: right
     }
     </style>
   </head>
 
   <body>
-    <audio controls>
+    <a href="http://www.wxyc.org/" target="_blank" class="float-right">
+      <img id="wxyc-image" src="images/wxyc.png" width="128"/>
+    </a>
+
+    <br clear="all">
+
+    <audio controls class="float-right">
       <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
       Sorry, your browser does not support playing audio on this web page.
     </audio>
 
-    <a href="http://www.wxyc.org/" target="_blank">
-      <img id="wxyc-image" src="images/wxyc.png" width="128"/>
+    <br clear="all">
+
+    <a href="https://github.com/pmuellr/wxyc-player" target="_blank" class="float-right">
+      <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
     </a>
 
-    <p>
+    <br clear="all">
+
+    <p class="float-right">
       <a href="http://www.wxyc.info/playlists/recent" target="_blank">
         playlist
       </a>
