@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WXYC Live Stream</title>
+    <link rel="shortcut icon" href="images/wxyc.png" />
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      position: fixed;
+      height:   100%;
+      width:    100%;
+      margin:   0;
+      padding:  0;
+    }
+    body {
+      padding:            1em;
+      font-size:          200%;
+      font-family:        sans-serif;
+      background-color:   #EEEEEE;
+      -webkit-transition: background-color 10000ms linear;
+      -moz-transition:    background-color 10000ms linear;
+      -o-transition:      background-color 10000ms linear;
+      -ms-transition:     background-color 10000ms linear;
+      transition:         background-color 10000ms linear;
+    }
+    #wxyc-image {
+      float: right;
+    }
+    </style>
+  </head>
+
+  <body>
+    <img id="wxyc-image" src="images/wxyc.png" width="128"/>
+
+    <audio controls>
+      <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
+      Sorry, your browser does not support playing audio on this web page.
+    </audio>
+
+    <p><a href="http://www.wxyc.info/playlists/recent">PlayList</a></p>
+    <p><a href="http://www.wxyc.org">WXYC Main site</a></p>
+
+    <script>
+    var color
+    var colors = ['#7BAFD4', '#EEEEEE']
+    var colorIndex = 1
+
+    setTimeout(changeBackgroundColor, 1)
+    setInterval(changeBackgroundColor, 10000)
+
+    function changeBackgroundColor () {
+      colorIndex = (colorIndex + 1) % 2
+      color = colors[colorIndex]
+      document.body.style.backgroundColor = color
+    }
+    </script>
+  </body>
+</html>
