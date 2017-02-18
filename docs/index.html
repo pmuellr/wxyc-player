@@ -79,6 +79,10 @@
     </div>
 
     <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('scripts/service-worker.js')
+    }
+
     var color
     var colors = ['#7BAFD4', '#EEEEEE']
     var colorIndex = 1
@@ -90,10 +94,6 @@
       colorIndex = (colorIndex + 1) % 2
       color = colors[colorIndex]
       document.body.style.backgroundColor = color
-    }
-
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('scripts/service-worker.js')
     }
     </script>
   </body>
