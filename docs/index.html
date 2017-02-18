@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>WXYC Live Stream</title>
+    <meta name="theme-color"      content="#7BAFD4" />
+    <link rel="manifest"          href="manifest.json" />
     <link rel="shortcut icon"     href="images/wxyc-square.png" />
-    <link rel="icon"              href="images/wxyc-square-app-icon.png" />
-    <link rel="apple-touch-icon"  href="images/wxyc-square-app-icon.png" />
+    <link rel="icon"              href="images/wxyc-square.png" />
+    <link rel="apple-touch-icon"  href="images/wxyc-square.png" />
     <style>
     * {
       box-sizing: border-box;
@@ -88,6 +90,10 @@
       colorIndex = (colorIndex + 1) % 2
       color = colors[colorIndex]
       document.body.style.backgroundColor = color
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/scripts/service-worker.js')
     }
     </script>
   </body>
