@@ -1,0 +1,19 @@
+{
+  "name": "wxyc-playlist",
+  "version": "1.0.0",
+  "description": "RunKit notebook code to get WXYC playlist",
+  "license": "MIT",
+  "author": "Patrick Mueller <pmuellr@apache.org> (https://github.com/pmuellr)",
+  "homepage": "https://github.com/pmuellr/wxyc-player",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmuellr/wxyc-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pmuellr/wxyc-player/issues"
+  },
+  "dependencies": {
+    "request": "~2.83.0"
+  },
+  "devDependencies": {}
+}

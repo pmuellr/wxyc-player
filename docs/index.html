@@ -24,7 +24,7 @@
     }
     body {
       padding:            0.5em;
-      font-size:          300%;
+      font-size:          120%;
       font-family:        sans-serif;
       background-color:   #EEEEEE;
       transition:         background-color 10000ms linear;
@@ -67,9 +67,11 @@
     </div>
 
     <div class="flex-grow">
-      <a href="http://www.wxyc.info/playlists/recent" target="_blank">
-        playlist
-      </a>
+      <p><span id='pl-song-info'></span></p>
+      <p><span id='pl-dj-info'></span></p>
+      <p><a href="http://www.wxyc.info/playlists/recent" target="_blank">
+        complete playlist
+      </a></p>
     </div>
 
     <div>
@@ -78,23 +80,6 @@
       </a>
     </div>
 
-    <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('scripts/service-worker.js')
-    }
-
-    var color
-    var colors = ['#7BAFD4', '#EEEEEE']
-    var colorIndex = 1
-
-    setTimeout(changeBackgroundColor, 1)
-    setInterval(changeBackgroundColor, 10000)
-
-    function changeBackgroundColor () {
-      colorIndex = (colorIndex + 1) % 2
-      color = colors[colorIndex]
-      document.body.style.backgroundColor = color
-    }
-    </script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
