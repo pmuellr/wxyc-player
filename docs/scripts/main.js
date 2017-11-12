@@ -2,10 +2,6 @@
 
 const PlaylistUpdateSeconds = 15
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('scripts/service-worker.js')
-}
-
 var color
 var colors = ['#7BAFD4', '#EEEEEE']
 var colorIndex = 1

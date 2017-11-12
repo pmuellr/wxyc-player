@@ -54,16 +54,8 @@
   <body class="flex-column">
 
     <div class="flex-grow">
-      <a href="http://www.wxyc.org/" target="_blank">
-        <img id="wxyc-image" src="images/wxyc-square.png" width="128"/>
-      </a>
-    </div>
-
-    <div class="flex-grow">
-      <audio controls>
-        <source src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3" type="audio/mpeg">
-        Sorry, your browser does not support playing audio on this web page.
-      </audio>
+      <img id="play-pause" src="images/media-play.svg" width="128">
+      <img id="wxyc-image" src="images/wxyc-square.png" width="128"/>
     </div>
 
     <div class="flex-grow">
@@ -78,8 +70,10 @@
       <a href="https://github.com/pmuellr/wxyc-player" target="_blank">
         <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
       </a>
+      <audio id="audio" src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3"/>
     </div>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/audio.js"></script>
   </body>
 </html>
