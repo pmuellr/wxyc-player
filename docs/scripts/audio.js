@@ -7,16 +7,18 @@ window.onload = onLoad
 function onLoad () {
   const audioElement = document.querySelector('audio')
   const playPauseImg = document.querySelector('#play-pause')
+  const messageElement = document.querySelector('#message')
 
-  audio = new Audio(audioElement, playPauseImg)
+  audio = new Audio(audioElement, playPauseImg, messageElement)
   audio.isPlaying()
 }
 
 class Audio {
-  constructor (audioElement, playPauseImg) {
+  constructor (audioElement, playPauseImg, messageElement) {
     this._isPlaying = false
     this._audioElement = audioElement
     this._playPauseImg = playPauseImg
+    this._messageElement = messageElement
 
     // this._audioElement.onerror = this._onError.bind(this)
     this._playPauseImg.onclick = this._playPauseClicked.bind(this)
@@ -44,17 +46,41 @@ class Audio {
     this._isPlaying = true
 
     this._audioElement.src = 'http://audio-mp3.ibiblio.org:8000/wxyc.mp3'
-    this._audioElement.play()
+    const startedPromise = this._audioElement.play()
     this._playPauseImg.src = 'images/media-pause.svg'
+
+    this._displayMessage(`loading:<br>${this._audioElement.src}`)
+
+    startedPromise
+      .then(() => {
+        this._displayMessage()
+      })
+      .catch(err => {
+        if (err.name === 'AbortError' || err.code === 20) {
+          this._displayMessage()
+          return
+        }
+
+        const message = `error loading audio: ${err}`
+        console.log(message)
+        this._displayMessage(message)
+      })
   }
 
   pause () {
     if (!this.isPlaying()) return
     this._isPlaying = false
 
-    this._audioElement.pause()
+    this._displayMessage()
     this._audioElement.src = ''
     this._playPauseImg.src = 'images/media-play.svg'
+
+    this._audioElement.pause()
+  }
+
+  _displayMessage (message) {
+    if (message == null || message.trim() === '') message = '&nbsp;'
+    this._messageElement.innerHTML = message
   }
 }
 
