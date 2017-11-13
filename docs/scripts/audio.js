@@ -4,6 +4,8 @@ let audio
 
 window.onload = onLoad
 
+let sendGAevent = function (event, label) {}
+
 function onLoad () {
   const audioElement = document.querySelector('audio')
   const playPauseImg = document.querySelector('#play-pause')
@@ -11,6 +13,12 @@ function onLoad () {
 
   audio = new Audio(audioElement, playPauseImg, messageElement)
   audio.isPlaying()
+
+  if (window.ga != null) {
+    sendGAevent = function (event, label) {
+      window.ga('send', 'event', 'Audio', event, label)
+    }
+  }
 }
 
 class Audio {
@@ -45,6 +53,8 @@ class Audio {
     if (this.isPlaying()) return
     this._isPlaying = true
 
+    sendGAevent('play')
+
     this._audioElement.src = 'http://audio-mp3.ibiblio.org:8000/wxyc.mp3'
     const startedPromise = this._audioElement.play()
     this._playPauseImg.src = 'images/media-pause.svg'
@@ -64,12 +74,18 @@ class Audio {
         const message = `error loading audio: ${err}`
         console.log(message)
         this._displayMessage(message)
+
+        sendGAevent('play-error', `${err.name}: ${err.code}`)
+        this.pause()
+        this._displayMessage(message)
       })
   }
 
   pause () {
     if (!this.isPlaying()) return
     this._isPlaying = false
+
+    sendGAevent('pause')
 
     this._displayMessage()
     this._audioElement.src = ''
