@@ -30,11 +30,13 @@ class Audio {
 
     // this._audioElement.onerror = this._onError.bind(this)
     this._playPauseImg.onclick = this._playPauseClicked.bind(this)
+
+    registerEvents(this._audioElement)
   }
 
   _onError () {
     const message = getMediaError(this._audioElement)
-    console.log('error:', message)
+    log(`error: ${message}`)
   }
 
   _playPauseClicked () {
@@ -72,7 +74,7 @@ class Audio {
         }
 
         const message = `error loading audio: ${err}`
-        console.log(message)
+        log(message)
         this._displayMessage(message)
 
         sendGAevent('play-error', `${err.name}: ${err.code}`)
@@ -95,7 +97,7 @@ class Audio {
   }
 
   _displayMessage (message) {
-    if (message == null || message.trim() === '') message = '&nbsp;'
+    if (message == null || message.trim() === '') message = '&nbsp;<br>&nbsp;'
     this._messageElement.innerHTML = message
   }
 }
@@ -111,3 +113,45 @@ function getMediaError (element) {
     default: return `An unknown error occurred: ${err.code}.`
   }
 }
+
+function log (message) {
+  const date = new Date().toISOString().substr(11, 11)
+  console.log(`${date}: ${message}`)
+}
+
+function registerEvents (audioElement) {
+  for (let eventName of EventNames) {
+    audioElement.addEventListener(eventName, () => {
+      log(`audio event: ${eventName}`)
+    }, true)
+  }
+}
+
+const EventNames = [
+  'ended',
+  'error',
+  'pause',
+  'playing',
+  'stalled'
+]
+
+/*
+  'abort',
+  'emptied',
+  'canplay',
+  'canplaythrough',
+  'durationchange',
+  'interruptbegin',
+  'interruptend',
+  'loadeddata',
+  'loadedmetadata',
+  'loadstart',
+  'play',
+  'progress',
+  'ratechange',
+  'seeked',
+  'seeking',
+  'suspend',
+  'timeupdate',
+  'waiting'
+*/

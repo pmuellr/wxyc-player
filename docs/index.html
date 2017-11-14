@@ -30,8 +30,7 @@
       transition:         background-color 10000ms linear;
     }
     audio {
-      padding-top:    0.0em;
-      padding-bottom: 0.0em;
+      display: none;
     }
     a {
       text-decoration: none;
@@ -41,26 +40,33 @@
     }
     #github-image {
     }
-    .flex-column {
-      display:        flex;
-      flex-direction: column;
-    }
-    .flex-grow {
-      flex-grow: 1;
+    #message {
+      font-size: 75%;
     }
     </style>
   </head>
 
-  <body class="flex-column">
+  <body>
 
-    <div class="flex-grow">
-      <img id="play-pause" src="images/media-play.svg" width="128">
-      <img id="wxyc-image" src="images/wxyc-square.png" width="128"/>
+    <div>
+      <table width="100%">
+        <tr>
+          <td>
+            <img id="play-pause" src="images/media-play.svg" width="128">
+          </td>
+          <td style="text-align:right;">
+            <a href="http://www.wxyc.org/">
+              <img id="wxyc-image" src="images/wxyc-square.png" width="128"/>
+            </a>
+          </td>
+        </tr>
+      </table>
 
-      <p id="message">&nbsp;</p>
+      <p id="message">&nbsp;<br>&nbsp;</p>
+      <audio id="audio" src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3"/>
     </div>
 
-    <div class="flex-grow">
+    <div>
       <p><span id='pl-song-info'></span></p>
       <p><span id='pl-dj-info'></span></p>
       <p><a href="http://www.wxyc.info/playlists/recent" target="_blank">
@@ -68,13 +74,21 @@
       </a></p>
     </div>
 
-    <div>
-      <p>Save this web page to your Home Screen and it will act like an app!</p>
+    <p>&nbsp;</p>
 
-      <a href="https://github.com/pmuellr/wxyc-player" target="_blank">
-        <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
-      </a>
-      <audio id="audio" src="http://audio-mp3.ibiblio.org:8000/wxyc.mp3"/>
+    <div>
+      <table width="100%">
+        <tr>
+          <td>
+            Save this web page to your Phone's Home Screen and it will act like an app!
+          </td>
+          <td style="text-align:right;">
+            <a href="https://github.com/pmuellr/wxyc-player" target="_blank">
+              <img id="github-image" src="images/GitHub-Mark-120px-plus.png" width="64"/>
+            </a>
+          </td>
+        </tr>
+      </table>
     </div>
 
     <script src="scripts/main.js"></script>
