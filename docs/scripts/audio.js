@@ -97,7 +97,7 @@ class Audio {
   }
 
   _displayMessage (message) {
-    if (message == null || message.trim() === '') message = '&nbsp;<br>&nbsp;'
+    if (message == null || message.trim() === '') message = ''
     this._messageElement.innerHTML = message
   }
 }
