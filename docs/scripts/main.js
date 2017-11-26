@@ -10,7 +10,7 @@ setTimeout(changeBackgroundColor, 1)
 setInterval(changeBackgroundColor, 10000)
 setInterval(updatePlaylistWithRetries, PlaylistUpdateSeconds * 1000)
 
-updateLastModified()
+setTimeout(updateLastModified, 1000)
 
 updatePlaylistWithRetries()
 
