@@ -10,6 +10,8 @@ setTimeout(changeBackgroundColor, 1)
 setInterval(changeBackgroundColor, 10000)
 setInterval(updatePlaylistWithRetries, PlaylistUpdateSeconds * 1000)
 
+updateLastModified()
+
 updatePlaylistWithRetries()
 
 function changeBackgroundColor () {
@@ -99,6 +101,9 @@ function getPlaylist (cb) {
   }
 }
 
+function updateLastModified () {
+  document.getElementById('last-modified').innerText = document.lastModified
+}
 function sanitize (string) {
   return string
   .replace('&', '&amp;')
